@@ -61,7 +61,7 @@ def save_to_database():
         return Response("URL not received", status = 400)
     cur = db.cursor()
     try:
-        cur.execute("INSERT INTO objecturl (url) VALUES (%s) RETURNING id;", (object_url,))
+        cur.execute("INSERT INTO objecturls (url) VALUES (%s) RETURNING id;", (object_url,))
         db.commit()
         row_id = cur.fetchone()[0]
         hash_id = hashids.encode(row_id)
@@ -79,7 +79,7 @@ def display_ar(hash):
     db = get_db()
     cur = db.cursor()
     try:
-        cur.execute("SELECT url FROM objecturl WHERE id = %s;", (row,))
+        cur.execute("SELECT url FROM objecturls WHERE id = %s;", (row,))
         url_source = cur.fetchone()[0]
         cur.close()
         return render_template("index.html", aws_url=url_source)
