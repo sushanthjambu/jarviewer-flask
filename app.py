@@ -25,9 +25,9 @@ def hello():
 
 @app.route('/sign_request/', methods = ['GET'])
 def presigned_request():
-    S3_BUCKET = 'jambuartest'
+    S3_BUCKET = os.environ['S3_BUCKET']
     filename = request.args.get('file_name')
-
+    #Mention your bucket's region name in the parameter 'region_name' below.
     s3 = boto3.client('s3', config = botocore.client.Config(region_name = 'ap-south-1', signature_version = 's3v4'))
     try:
         presigned_post = s3.generate_presigned_post(S3_BUCKET, filename,
@@ -43,7 +43,6 @@ def get_db():
     if 'db' not in g:
         DATABASE_URL = os.environ['DATABASE_URL']
         g.db = psycopg2.connect(DATABASE_URL, sslmode='require')
-        #g.db = psycopg2.connect(database='jarviewer', user='postgres', password='ceasar1@3')
 
     return g.db
 
