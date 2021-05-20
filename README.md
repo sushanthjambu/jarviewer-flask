@@ -19,4 +19,4 @@ This is a simple server side implementation that is used for the WebAR feature i
     > Note : You must also change the region name of S3 bucket [here](https://github.com/sushanthjambu/jarviewer-flask/blob/ab15102d0cd513c5c9747c02d9b659a8c96dd06d/app.py#L31)
     
 For more info on deploying a flask app to heroku check the link below.
-https://devcenter.heroku.com/articles/s3-upload-python
+- https://devcenter.heroku.com/articles/s3-upload-python
