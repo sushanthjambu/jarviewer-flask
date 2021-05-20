@@ -10,7 +10,7 @@ This is a simple server side implementation that is used for the WebAR feature i
 2. You can directly create a new app on Heroku and clone it from this repo. Alternately you may download this repo and push to Heroku using Heroku CLI.
     - For Heroku app to deploy properly, you have to set a few config variables.
       1. `heroku config:set AWS_ACCESS_KEY_ID=your_aws_access_key -a your_app_name`
-      2. 1heroku config:set AWS_SECRET_ACCESS_KEY=your_secret_aws_access_key -a your_app_name`
+      2. `heroku config:set AWS_SECRET_ACCESS_KEY=your_secret_aws_access_key -a your_app_name`
       3. `heroku config:set S3_BUCKET=your_amazon_s3_bucket_name -a your_app_name`
     - You must also provision a database to your app. This project uses heroku-postgres. To provision database from CLI use command
       ```heroku addons:create heroku-postgresql:hobby-dev -a your_app_name```
