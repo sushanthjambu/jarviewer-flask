@@ -16,7 +16,7 @@ This is a simple server side implementation that is used for the WebAR feature i
       ```heroku addons:create heroku-postgresql:hobby-dev -a your_app_name```
       This provisions a free heroku-postgres addon to your app. For more info visit https://devcenter.heroku.com/articles/heroku-postgresql
     - Provisioning a database automatically creates a config variable `DATABASE_URL`. Make sure the `DATABASE_URL` config var is set using the command `heroku config -a your_app_name` which lists all your app's config vars.
-    > Note : You must also change the region name of S3 bucket in app.py
+    > Note : You must also change the region name of S3 bucket [here](https://github.com/sushanthjambu/jarviewer-flask/blob/ab15102d0cd513c5c9747c02d9b659a8c96dd06d/app.py#L31)
     
 For more info on deploying a flask app to heroku check the link below.
 https://devcenter.heroku.com/articles/s3-upload-python
